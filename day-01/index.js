@@ -63,6 +63,14 @@ function addPunctuation(punctuation) {
   return (str) => str + punctuation;
 }
 
+function fibonacci(n, memo) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+
+  if (!memo) memo = new Map();
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 module.exports = {
   reverseSentence,
   titleCase,
@@ -71,4 +79,5 @@ module.exports = {
   fizzBuzz,
   multiplesOfN,
   addPunctuation,
+  fibonacci,
 };

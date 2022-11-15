@@ -6,6 +6,7 @@ const {
   fizzBuzz,
   multiplesOfN,
   addPunctuation,
+  fibonacci,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -48,5 +49,13 @@ describe('primitive code challenges', () => {
     const addUnsure = addPunctuation('?!?');
     expect(addUnsure('Hello World')).toEqual('Hello World?!?');
     expect(addUnsure('Pokemon, catch em all')).toEqual('Pokemon, catch em all?!?');
+  });
+
+  describe('fibonacci', () => {
+    expect(fibonacci(0)).toEqual(0);
+    expect(fibonacci(1)).toEqual(1);
+    expect(fibonacci(2)).toEqual(1);
+    expect(fibonacci(6)).toEqual(8);
+    expect(fibonacci(8)).toEqual(21);
   });
 });
