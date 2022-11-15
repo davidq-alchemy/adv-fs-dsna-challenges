@@ -28,6 +28,7 @@ function anagrams(wordOne, wordTwo) {
 /*
  * This solution is O(n) but likely has a much bigger constant factor than the O(nlogn) sort-based solution above.
  */
+// eslint-disable-next-line no-unused-vars
 function anagramsLinearTime(wordOne, wordTwo) {
   function countCharacters(str) {
     return str.split('').reduce((map, x) => map.set(x, (map.get(x) || 0) + 1), new Map());
