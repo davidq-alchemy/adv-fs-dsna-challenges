@@ -40,9 +40,21 @@ function anagramsLinearTime(wordOne, wordTwo) {
   return true;
 }
 
+function fizzBuzz(number) {
+  const fizzBuzzNumbers = [];
+  for (let i = 1; i <= number; i++) {
+    let output = '';
+    if (i % 3 === 0) output += 'Fizz';
+    if (i % 5 === 0) output += 'Buzz';
+    fizzBuzzNumbers.push(output || i);
+  }
+  return fizzBuzzNumbers;
+}
+
 module.exports = {
   reverseSentence,
   titleCase,
   at,
   anagrams,
+  fizzBuzz,
 };

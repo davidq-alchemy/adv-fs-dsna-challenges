@@ -3,6 +3,7 @@ const {
   titleCase,
   at,
   anagrams,
+  fizzBuzz,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -25,5 +26,9 @@ describe('primitive code challenges', () => {
     expect(anagrams('superintended', 'unpredestined')).toBe(true);
     expect(anagrams('pictorialness', 'documentarily')).toBe(false);
     expect(anagrams('ab', 'aabb')).toBe(false);
+  });
+
+  describe('fizzBuzz', () => {
+    expect(fizzBuzz(16)).toEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16]);
   });
 });
