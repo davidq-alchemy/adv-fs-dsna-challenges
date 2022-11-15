@@ -71,6 +71,13 @@ function fibonacci(n, memo) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
+function rootDigits(n) {
+  const digits = n.toString().split('');
+  const numbers = digits.map(d => +d);
+  const sum = numbers.reduce((a, b) => a + b, 0);
+  return sum.toString().length > 1 ? rootDigits(sum) : sum;
+}
+
 module.exports = {
   reverseSentence,
   titleCase,
@@ -80,4 +87,5 @@ module.exports = {
   multiplesOfN,
   addPunctuation,
   fibonacci,
+  rootDigits,
 };

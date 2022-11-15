@@ -7,6 +7,7 @@ const {
   multiplesOfN,
   addPunctuation,
   fibonacci,
+  rootDigits,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -57,5 +58,11 @@ describe('primitive code challenges', () => {
     expect(fibonacci(2)).toEqual(1);
     expect(fibonacci(6)).toEqual(8);
     expect(fibonacci(8)).toEqual(21);
+  });
+
+  describe('rootDigits', () => {
+    expect(rootDigits(123)).toEqual(6);
+    expect(rootDigits(4322)).toEqual(2);
+    expect(rootDigits(999888777)).toEqual(9);
   });
 });
