@@ -4,4 +4,12 @@ function reverseSentence(str) {
     .map((word) => word.split('').reverse().join(''))
     .join(' ');
 }
-module.exports = { reverseSentence };
+
+function titleCase(str) {
+  return str.toLowerCase().replace(/(^|(?<=\s))\w/g, c => c.toUpperCase());
+}
+
+module.exports = {
+  reverseSentence,
+  titleCase,
+};
