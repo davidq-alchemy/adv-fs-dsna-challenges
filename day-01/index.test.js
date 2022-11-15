@@ -1,6 +1,7 @@
 const {
   reverseSentence,
   titleCase,
+  at,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -12,5 +13,10 @@ describe('primitive code challenges', () => {
 
   describe('titleCase', () => {
     expect(titleCase('alchemy ROCKS goLD')).toBe('Alchemy Rocks Gold');
+  });
+
+  describe('at', () => {
+    expect(at(['a', 'b', 'c', 'd', 'e'], 1)).toBe('b');
+    expect(at(['a', 'b', 'c', 'd', 'e'], -2)).toBe('d');
   });
 });
