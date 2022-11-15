@@ -1,3 +1,8 @@
+/*
+ *
+ * Primitive challenges
+ *
+ */
 function reverseSentence(str) {
   return str
     .split(' ')
@@ -59,10 +64,20 @@ function multiplesOfN(n) {
   return multiples;
 }
 
+/*
+ *
+ * Higher-order function challenge
+ *
+ */
 function addPunctuation(punctuation) {
   return (str) => str + punctuation;
 }
 
+/*
+ *
+ * Recursive challenges
+ *
+ */
 function fibonacci(n, memo) {
   if (n === 0) return 0;
   if (n === 1) return 1;
