@@ -51,10 +51,19 @@ function fizzBuzz(number) {
   return fizzBuzzNumbers;
 }
 
+function multiplesOfN(n) {
+  const multiples = [];
+  for (let i = 1; i <= 50; i++) {
+    if (i % n === 0) multiples.push(i);
+  }
+  return multiples;
+}
+
 module.exports = {
   reverseSentence,
   titleCase,
   at,
   anagrams,
   fizzBuzz,
+  multiplesOfN,
 };

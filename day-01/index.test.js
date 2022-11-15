@@ -4,6 +4,7 @@ const {
   at,
   anagrams,
   fizzBuzz,
+  multiplesOfN,
 } = require('./index');
 
 describe('primitive code challenges', () => {
@@ -30,5 +31,11 @@ describe('primitive code challenges', () => {
 
   describe('fizzBuzz', () => {
     expect(fizzBuzz(16)).toEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz', 16]);
+  });
+
+  describe('multiplesOfN', () => {
+    expect(multiplesOfN(5)).toEqual([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+    expect(multiplesOfN(25)).toEqual([25, 50]);
+    expect(multiplesOfN(75)).toEqual([]);
   });
 });
