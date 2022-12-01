@@ -1,6 +1,7 @@
 const {
   BinaryTreeNode,
-  PersonTreeNode
+  PersonTreeNode,
+  LinkedListNode
 } = require('./index');
 
 describe('node based data structures', () => {
@@ -50,5 +51,25 @@ describe('node based data structures', () => {
 
     expect(root.findPerson('Nelson')).toBe(nelson.person);
     expect(root.findPerson('Foo')).toBe(undefined);
+  });
+
+  it('linked list', () => {
+    const root = new LinkedListNode('A');
+    const nodeB = new LinkedListNode('B');
+    root.add(nodeB);
+
+    expect(root.getList()).toEqual('A B');
+
+    const nodeC = new LinkedListNode('C');
+    const nodeD = new LinkedListNode('D');
+    const nodeE = new LinkedListNode('E');
+    root.add(nodeC);
+    root.add(nodeD);
+    root.add(nodeE);
+
+    expect(root.getList()).toEqual('A B C D E');
+
+    root.remove(1);
+    expect(root.getList()).toEqual('A C D E');
   });
 });

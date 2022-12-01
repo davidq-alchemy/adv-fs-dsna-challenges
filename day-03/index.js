@@ -35,7 +35,46 @@ class PersonTreeNode extends BinaryTreeNode {
   }
 }
 
+class LinkedListNode {
+  value;
+  next;
+
+  constructor(value) {
+    this.value = value;
+  }
+
+  add(node) {
+    this.next ? this.next.add(node) : this.next = node;
+  }
+
+  getList() {
+    if (!this.next) return this.value.toString();
+    return this.value.toString() + ' ' + this.next.getList();
+  }
+
+  /**
+   * Removes the node at the given index and returns it.
+   *
+   * Note that you shouldn't remove the node at index zero if you aren't holding a reference to elsewhere in the list.
+   *
+   * @param {number} index - the index of the node to remove
+   * @returns {LinkedListNode} the removed node, or undefined if index is invalid
+   */
+  remove(index, parent = undefined) {
+    if (index <= 0) {
+      if (parent) parent.next = this.next;
+      this.next = undefined;
+      return this;
+    }
+
+    if (this.next) return this.next.remove(index - 1, this);
+
+    return undefined;
+  }
+}
+
 module.exports = {
   BinaryTreeNode,
-  PersonTreeNode
+  PersonTreeNode,
+  LinkedListNode
 };
