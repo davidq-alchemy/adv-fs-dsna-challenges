@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 class BinaryTreeNode {
   value;
   left;
@@ -73,8 +74,16 @@ class LinkedListNode {
   }
 }
 
+function traverse(node, indent = 0) {
+  console.log('  '.repeat(indent) + node.value);
+  for (const child of node.children) {
+    traverse(child, indent + 1);
+  }
+}
+
 module.exports = {
   BinaryTreeNode,
   PersonTreeNode,
-  LinkedListNode
+  LinkedListNode,
+  traverse
 };

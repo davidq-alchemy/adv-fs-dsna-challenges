@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 const {
   BinaryTreeNode,
   PersonTreeNode,
-  LinkedListNode
+  LinkedListNode,
+  traverse
 } = require('./index');
 
 describe('node based data structures', () => {
@@ -71,5 +73,48 @@ describe('node based data structures', () => {
 
     root.remove(1);
     expect(root.getList()).toEqual('A C D E');
+  });
+
+  it('traverse', () => {
+    const D = {
+      value: 'D',
+      children: []
+    };
+
+    const B = {
+      value: 'B',
+      children: [D]
+    };
+
+    const C = {
+      value: 'C',
+      children: []
+    };
+
+    const F = {
+      value: 'F',
+      children: []
+    };
+
+    const E = {
+      value: 'E',
+      children: [F]
+    };
+
+    const A = {
+      value: 'A',
+      children: [B, C, E]
+    };
+
+    console.log = jest.fn();
+    traverse(A);
+
+    expect(console.log.mock.calls[0][0]).toEqual('A');
+    expect(console.log.mock.calls[1][0]).toEqual('  B');
+    expect(console.log.mock.calls[2][0]).toEqual('    D');
+    expect(console.log.mock.calls[3][0]).toEqual('  C');
+    expect(console.log.mock.calls[4][0]).toEqual('  E');
+    expect(console.log.mock.calls[5][0]).toEqual('    F');
+
   });
 });
